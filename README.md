@@ -1,4 +1,4 @@
-# Android Simple Diary
+# Android Secret Diary
 
 Keeping diaries is a popular thing across the world. You can take notes about your daily experiences
 and personal feelings or write the goals you want to achieve. In this project, I created a
@@ -20,7 +20,7 @@ The app is not yet available on the Google Play Store. You need to build the app
 do this by cloning the repository and building the app with Android Studio.
 
 ```sh
-git clone https://github.com/dan-koller/android-simple-diary.git
+git clone https://github.com/dan-koller/android-secret-diary.git
 ```
 
 _Note that the app targets Android 12 (API level 31). The minimum SDK version is 28 (Android 9)._
