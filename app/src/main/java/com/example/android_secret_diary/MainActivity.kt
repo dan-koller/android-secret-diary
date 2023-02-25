@@ -20,6 +20,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
 
+    /**
+     * After successful login, the onCreate method of the main activity is called. This method is
+     * used to initialize the main activity. In this case, we are setting up the UI, and setting up
+     * the logic for saving and undoing the diary.
+     * @param savedInstanceState The saved state of the app, if any
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -48,11 +54,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<Button>(R.id.btnUndo).setOnClickListener{
+        findViewById<Button>(R.id.btnUndo).setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Remove last note")
                 .setMessage("Do you really want to remove the last writing? This operation cannot be undone!")
-                .setPositiveButton("Yes") {_, _ ->
+                .setPositiveButton("Yes") { _, _ ->
 
                     val text = textView.text.toString()
                     if (!text.contains("\n\n")) textView.text = ""
