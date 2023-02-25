@@ -20,6 +20,7 @@ import java.io.File
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(RobolectricTestRunner::class)
 @Config(shadows = [CustomClockSystemShadow::class])
+@Suppress("UNUSED_VARIABLE")
 class SecretDiaryUnitTest : AbstractUnitTest<LoginActivity>(LoginActivity::class.java) {
 
     private val tvTitle by lazy {
@@ -158,7 +159,8 @@ class SecretDiaryUnitTest : AbstractUnitTest<LoginActivity>(LoginActivity::class
             val messageActivityNotFinishing =
                 "Login Activity should be destroyed on successful login action"
             val userIntentFlags = shadowActivity.nextStartedActivity.flags
-            val hasCorrectFlags = userIntentFlags and (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK) == (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            val hasCorrectFlags =
+                userIntentFlags and (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK) == (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             assertTrue(messageActivityNotFinishing, activity.isFinishing or hasCorrectFlags)
         }
     }
